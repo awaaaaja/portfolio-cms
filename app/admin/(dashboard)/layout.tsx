@@ -5,9 +5,9 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
   return (
     <>
       <AdminSidebar />
-      <div className="lg:pl-64">
+      <div className="admin-shell min-w-0 lg:pl-64">
         <AdminTopbar />
-        <main className="p-4 lg:p-8">{children}</main>
+        <main className="min-w-0 overflow-hidden p-3 sm:p-5 lg:p-8">{children}</main>
       </div>
     </>
   );

@@ -40,6 +40,38 @@ body {
   color: hsl(var(--foreground));
 }
 
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  .admin-shell main form[class*="p-5"] {
+    padding: 1rem;
+  }
+
+  .admin-shell main h1,
+  .admin-shell main h2,
+  .admin-shell main h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .admin-shell main td,
+  .admin-shell main th {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
 ::selection {
   background: rgba(34, 211, 238, 0.32);
   color: white;

@@ -41,14 +41,14 @@ function CredentialGroup({ title, icon, children }: { title: string; icon: React
 function CredentialCard({ title, meta, description, href, image, label = "View credential" }: { title: string; meta: string; description?: string | null; href?: string | null; image?: string | null; label?: string }) {
   const normalizedHref = normalizeHref(href);
   const content = (
-    <article className="interactive-card glass group flex min-h-40 flex-col overflow-hidden rounded-xl transition duration-500 hover:border-cyan-200/25 min-[420px]:flex-row">
-      <div className="aspect-[16/7] w-full shrink-0 bg-white/[0.04] min-[420px]:aspect-auto min-[420px]:w-28 sm:w-36">
-        {image ? <img src={image} alt={title} className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.025]" /> : <div className="flex h-full items-center justify-center font-mono text-2xl font-bold text-cyan-100/60">HFR</div>}
+    <article className="interactive-card glass group flex min-h-40 flex-col overflow-hidden rounded-xl transition duration-500 hover:border-cyan-200/25 sm:flex-row">
+      <div className="flex aspect-[4/3] w-full shrink-0 items-center justify-center overflow-hidden bg-white p-2 sm:aspect-auto sm:min-h-48 sm:w-48">
+        {image ? <img src={image} alt={title} className="h-full w-full object-contain transition duration-700 group-hover:scale-[1.01]" /> : <div className="flex h-full w-full items-center justify-center bg-slate-950 font-mono text-2xl font-bold text-cyan-100/60">HFR</div>}
       </div>
       <div className="flex min-w-0 flex-1 flex-col p-4 sm:p-5">
         <p className="font-mono text-xs text-cyan-200">{meta}</p>
         <h4 className="mt-2 text-lg font-bold text-white">{title}</h4>
-        <p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-400">{description}</p>
+        <p className="mt-2 text-sm leading-6 text-slate-400 sm:line-clamp-4">{description}</p>
         {normalizedHref ? <span className="mt-auto inline-flex items-center gap-1 pt-4 text-xs font-medium text-cyan-200">{label} <ExternalLink className="h-3.5 w-3.5" /></span> : null}
       </div>
     </article>

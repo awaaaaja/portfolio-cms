@@ -1,15 +1,15 @@
 import { cn } from "@/lib/utils";
 
 export function DataTable({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <div className={cn("overflow-hidden rounded-xl border border-white/10 bg-white/[0.04]", className)}>{children}</div>;
+  return <div className={cn("max-w-full overflow-x-auto rounded-xl border border-white/10 bg-white/[0.04]", className)}>{children}</div>;
 }
 
 export function Table({ children }: { children: React.ReactNode }) {
-  return <table className="w-full border-collapse text-left text-sm">{children}</table>;
+  return <table className="min-w-[680px] w-full border-collapse text-left text-sm">{children}</table>;
 }
 
 export function Th({ children }: { children: React.ReactNode }) {
-  return <th className="border-b border-white/10 px-4 py-3 font-medium text-slate-400">{children}</th>;
+  return <th className="whitespace-nowrap border-b border-white/10 px-4 py-3 font-medium text-slate-400">{children}</th>;
 }
 
 export function Td({ children }: { children: React.ReactNode }) {

@@ -40,9 +40,9 @@ export function ImageUploader({ name, defaultValue, label }: { name: string; def
     <div className="grid gap-2">
       <span className="text-sm font-medium text-slate-200">{label}</span>
       {url ? <img src={url} alt="" className="h-28 w-full rounded-lg border border-white/10 object-cover" /> : null}
-      <div className="flex gap-2">
+      <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_auto]">
         <Input name={name} value={url} onChange={(event) => setUrl(event.target.value)} placeholder="https://..." />
-        <Button type="button" variant="secondary" disabled={busy} onClick={() => document.getElementById(`${name}-file`)?.click()}>
+        <Button type="button" variant="secondary" className="w-full sm:w-auto" disabled={busy} onClick={() => document.getElementById(`${name}-file`)?.click()}>
           <Upload className="h-4 w-4" /> {busy ? "..." : "Upload"}
         </Button>
       </div>

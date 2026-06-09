@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Award, BarChart3, BookOpen, BookOpenText, Briefcase, GraduationCap, Home, LayoutDashboard, Mail, MessageSquareQuote, Settings, Sparkles, User } from "lucide-react";
 
-const items = [
+export const adminNavItems = [
   ["Dashboard", "/admin", LayoutDashboard],
   ["Profile", "/admin/profile", User],
   ["Projects", "/admin/projects", Briefcase],
@@ -23,7 +23,7 @@ export function AdminSidebar() {
         <Home className="h-4 w-4 text-cyan-200" /> Portfolio CMS
       </Link>
       <nav className="grid gap-1">
-        {items.map(([label, href, Icon]) => (
+        {adminNavItems.map(([label, href, Icon]) => (
           <Link key={href} href={href} className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/8 hover:text-white">
             <Icon className="h-4 w-4" /> {label}
           </Link>

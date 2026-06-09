@@ -32,8 +32,8 @@ export function BlogForm({ blog }: { blog?: Blog }) {
         <Textarea name="excerpt" defaultValue={blog?.excerpt || ""} />
       </div>
       <div className="grid gap-2">
-        <Label>Content</Label>
-        <Textarea name="content" defaultValue={blog?.content || ""} className="min-h-64 font-mono" />
+        <Label>Content (Markdown)</Label>
+        <Textarea name="content" defaultValue={blog?.content || ""} className="min-h-80 font-mono leading-6" placeholder={"# Judul artikel\n\n## Subjudul\n\n1. Poin pertama\n2. Poin kedua"} />
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         <Field name="seo_title" label="SEO title" value={blog?.seo_title} />

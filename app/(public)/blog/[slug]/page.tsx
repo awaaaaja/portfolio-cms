@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Badge } from "@/components/ui/badge";
 import { getBlogBySlug } from "@/lib/data/public";
 import { formatDate } from "@/lib/utils";
@@ -11,7 +13,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function BlogDetailPage({ params }: { params: { slug: string } }) {
   const blog = await getBlogBySlug(params.slug);
   if (!blog) notFound();
-  const blocks = (blog.content || "").split(/\n{2,}/);
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
@@ -19,18 +20,16 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
       <h1 className="mt-5 text-4xl font-black text-white sm:text-6xl">{blog.title}</h1>
       <p className="mt-4 font-mono text-sm text-slate-500">{formatDate(blog.created_at)}</p>
       {blog.cover_url ? <img src={blog.cover_url} alt={blog.title} className="mt-8 rounded-2xl border border-white/10" /> : null}
-      <div className="prose-lite mt-10">
-        {blocks.map((block) => {
-          if (block.startsWith("## ")) return <h2 key={block}>{block.replace("## ", "")}</h2>;
-          if (block.startsWith("- ")) {
-            return (
-              <ul key={block}>
-                {block.split("\n").map((item) => <li key={item}>{item.replace("- ", "")}</li>)}
-              </ul>
-            );
-          }
-          return <p key={block}>{block}</p>;
-        })}
+      <div className="prose prose-invert prose-cyan mt-10 max-w-none break-words prose-headings:scroll-mt-24 prose-headings:font-black prose-headings:text-white prose-a:text-cyan-200 prose-a:no-underline hover:prose-a:text-cyan-100 prose-blockquote:border-cyan-300 prose-blockquote:text-slate-300 prose-code:break-words prose-code:text-cyan-100 prose-pre:max-w-full prose-pre:overflow-x-auto prose-pre:border prose-pre:border-white/10 prose-pre:bg-slate-950 prose-img:mx-auto prose-img:max-h-[36rem] prose-img:rounded-xl prose-img:object-contain prose-hr:border-white/10 prose-strong:text-white prose-table:min-w-[560px]">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            a: ({ children, ...props }) => <a {...props} target="_blank" rel="noreferrer">{children}</a>,
+            table: ({ children }) => <div className="max-w-full overflow-x-auto"><table>{children}</table></div>
+          }}
+        >
+          {blog.content || ""}
+        </ReactMarkdown>
       </div>
     </article>
   );

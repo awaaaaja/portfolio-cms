@@ -8,6 +8,7 @@ Modern animated developer portfolio and Supabase-backed admin panel built with N
 - Public pages fetch real data from Supabase.
 - Protected `/admin` panel using Supabase Auth plus an explicit `admin_users` allowlist.
 - Admin CRUD for profile, projects, skills, experiences, educations, certifications, publications, testimonials, blogs, messages, and settings.
+- Blog content supports Markdown and GitHub Flavored Markdown, including headings, lists, tables, checklists, links, blockquotes, and code blocks.
 - Supabase Storage uploads with admin-only management and restricted public testimonial photo uploads.
 - SQL schema, RLS policies, migrations, realistic seed data, and Vercel configuration included.
 

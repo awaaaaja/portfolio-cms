@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { env } from "@/lib/env";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: new URL(env.siteUrl),
   title: {
     default: "Developer Portfolio CMS",
     template: "%s | Developer Portfolio"

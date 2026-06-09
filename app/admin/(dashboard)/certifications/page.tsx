@@ -19,8 +19,8 @@ export default async function AdminCertificationsPage({ searchParams }: { search
     <form action={upsertCertification} className="grid gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-5">
       <input type="hidden" name="id" value={item?.id || ""} />
       <div className="grid gap-4 md:grid-cols-2"><Field name="title" label="Title" value={item?.title} /><Field name="issuer" label="Issuer" value={item?.issuer} /></div>
-      <div className="grid gap-4 md:grid-cols-3"><Field name="issued_at" label="Issued date" value={item?.issued_at} type="date" /><Field name="credential_url" label="Credential URL" value={item?.credential_url} /><Field name="sort_order" label="Sort order" value={item?.sort_order ?? 0} type="number" /></div>
-      <ImageUploader name="image_url" label="Certificate image" defaultValue={item?.image_url} />
+      <div className="grid gap-4 md:grid-cols-3"><Field name="issued_at" label="Issued date" value={item?.issued_at} type="date" /><Field name="credential_url" label="Credential link or DOI (optional)" value={item?.credential_url} /><Field name="sort_order" label="Sort order" value={item?.sort_order ?? 0} type="number" /></div>
+      <ImageUploader name="image_url" label="Certificate photo (optional)" defaultValue={item?.image_url} />
       <div className="grid gap-2"><Label>Description</Label><Textarea name="description" defaultValue={item?.description || ""} /></div>
       <Button>Save certification</Button>
     </form>

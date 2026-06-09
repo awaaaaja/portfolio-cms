@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ImageUploader } from "@/components/admin/image-uploader";
+import { GalleryUploader } from "@/components/admin/gallery-uploader";
 import { upsertProfile } from "@/lib/actions/admin";
 import { createClient } from "@/lib/supabase/server";
 import { fallbackProfile } from "@/lib/data/fallback";
@@ -33,6 +34,7 @@ export default async function AdminProfilePage() {
         <ImageUploader name="avatar_url" label="Avatar URL" defaultValue={profile.avatar_url} />
         <ImageUploader name="hero_photo_url" label="Hero photo URL" defaultValue={profile.hero_photo_url} />
       </div>
+      <GalleryUploader name="about_photo_urls" label="About slideshow photos" defaultValue={profile.about_photo_urls} />
       <div className="grid gap-2">
         <Label>Hero roles, one per line or comma-separated</Label>
         <Textarea name="hero_roles" defaultValue={(profile.hero_roles || []).join("\n")} />

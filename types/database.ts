@@ -9,6 +9,7 @@ export type Profile = {
   about_bio: string | null;
   avatar_url: string | null;
   hero_photo_url: string | null;
+  about_photo_urls: string[] | null;
   hero_roles: string[] | null;
   email: string | null;
   phone: string | null;
@@ -113,6 +114,7 @@ export type Publication = {
   publisher: string | null;
   published_at: string | null;
   publication_url: string | null;
+  doi: string | null;
   cover_url: string | null;
   description: string | null;
   sort_order: number;

@@ -45,6 +45,7 @@ export async function upsertProfile(formData: FormData) {
     about_bio: String(formData.get("about_bio") || ""),
     avatar_url: String(formData.get("avatar_url") || ""),
     hero_photo_url: String(formData.get("hero_photo_url") || ""),
+    about_photo_urls: splitLines(formData.get("about_photo_urls")),
     hero_roles: splitLines(formData.get("hero_roles")),
     email: String(formData.get("email") || ""),
     phone: String(formData.get("phone") || ""),
@@ -56,6 +57,7 @@ export async function upsertProfile(formData: FormData) {
     updated_at: new Date().toISOString()
   });
   revalidatePath("/");
+  revalidatePath("/about");
   revalidatePath("/admin/profile");
 }
 
@@ -223,6 +225,7 @@ export async function upsertPublication(formData: FormData) {
     publisher: String(formData.get("publisher") || ""),
     published_at: String(formData.get("published_at") || "") || null,
     publication_url: String(formData.get("publication_url") || ""),
+    doi: String(formData.get("doi") || ""),
     cover_url: String(formData.get("cover_url") || ""),
     description: String(formData.get("description") || ""),
     sort_order: int(formData.get("sort_order")),

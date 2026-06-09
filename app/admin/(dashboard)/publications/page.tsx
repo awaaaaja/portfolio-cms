@@ -19,8 +19,9 @@ export default async function AdminPublicationsPage({ searchParams }: { searchPa
     <form action={upsertPublication} className="grid gap-4 rounded-xl border border-white/10 bg-white/[0.04] p-5">
       <input type="hidden" name="id" value={item?.id || ""} />
       <div className="grid gap-4 md:grid-cols-2"><Field name="title" label="Title" value={item?.title} /><Field name="publisher" label="Publisher" value={item?.publisher} /></div>
-      <div className="grid gap-4 md:grid-cols-3"><Field name="published_at" label="Published date" value={item?.published_at} type="date" /><Field name="publication_url" label="Publication URL" value={item?.publication_url} /><Field name="sort_order" label="Sort order" value={item?.sort_order ?? 0} type="number" /></div>
-      <ImageUploader name="cover_url" label="Publication cover" defaultValue={item?.cover_url} />
+      <div className="grid gap-4 md:grid-cols-2"><Field name="published_at" label="Published date" value={item?.published_at} type="date" /><Field name="sort_order" label="Sort order" value={item?.sort_order ?? 0} type="number" /></div>
+      <div className="grid gap-4 md:grid-cols-2"><Field name="publication_url" label="Publication URL (optional)" value={item?.publication_url} /><Field name="doi" label="DOI (optional, example: 10.1234/example)" value={item?.doi} /></div>
+      <ImageUploader name="cover_url" label="Publication photo / cover (optional)" defaultValue={item?.cover_url} />
       <div className="grid gap-2"><Label>Description</Label><Textarea name="description" defaultValue={item?.description || ""} /></div>
       <Button>Save publication</Button>
     </form>

@@ -1,4 +1,4 @@
-insert into public.profiles (id, name, role, headline, bio, about_bio, avatar_url, hero_photo_url, hero_roles, email, phone, location, cv_url, github_url, linkedin_url, instagram_url)
+insert into public.profiles (id, name, role, headline, bio, about_bio, avatar_url, hero_photo_url, about_photo_urls, hero_roles, email, phone, location, cv_url, github_url, linkedin_url, instagram_url)
 values (
   '11111111-1111-1111-1111-111111111111',
   'Haikal Fatwa Rachmansyah',
@@ -8,6 +8,7 @@ values (
   'Saya adalah mahasiswa Sistem Informasi yang berfokus pada pengembangan aplikasi, analisis data, dan perancangan pengalaman digital. Saya menikmati proses menerjemahkan kebutuhan nyata menjadi sistem yang terstruktur, mudah digunakan, dan memiliki dampak.',
   '',
   '',
+  array[]::text[],
   array['Fullstack Developer','Data Analyst','Web Developer','UI Engineer','Mobile Developer','Admin Dashboard Builder','Information System Developer'],
   'hello@example.com',
   '+62 812 0000 0000',

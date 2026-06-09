@@ -49,14 +49,19 @@ Run these files in order:
 ```text
 supabase/migration_content_sections.sql
 supabase/production_hardening.sql
+supabase/migration_about_gallery_credentials.sql
 ```
 
 `production_hardening.sql` adds existing Auth users to `admin_users` once. Accounts created afterward do not automatically become admins.
+
+`migration_about_gallery_credentials.sql` enables the multi-photo About slideshow and publication DOI field.
 
 ## Admin Panel
 
 - Login directly at `/admin/login`; no admin link is shown publicly.
 - Update the hero/profile photo at `/admin/profile`.
+- Manage the rotating About photos at `/admin/profile`.
+- Certification and publication items may contain an uploaded photo, an external link/DOI, or only a photo.
 - Skills with `is_marquee = true` power the About tech marquee.
 - Public testimonial submissions enter as `pending` and require approval at `/admin/testimonials`.
 

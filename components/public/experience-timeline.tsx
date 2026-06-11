@@ -6,43 +6,55 @@ import { BriefcaseBusiness, GraduationCap } from "lucide-react";
 
 export function ExperienceTimeline({ experiences, educations }: { experiences: Experience[]; educations?: Education[] }) {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+    <section className="py-14 sm:py-20">
       <Reveal>
-        <p className="mb-3 font-mono text-sm uppercase text-cyan-200">timeline.map()</p>
-        <h2 className="text-balance text-3xl font-black leading-tight text-white sm:text-5xl">Experience and education</h2>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="mb-3 font-mono text-sm uppercase text-cyan-200">timeline.map()</p>
+          <h2 className="text-balance text-3xl font-black leading-tight text-white sm:text-5xl">Experience and education</h2>
+        </div>
       </Reveal>
-      <div className="mt-10 grid gap-12 lg:grid-cols-2">
-        <div className="min-w-0">
-          <div className="mb-6 flex items-center gap-3">
+      <div className="mt-10 grid gap-14">
+        <div className="min-w-0 border-y border-white/[0.07] bg-white/[0.015] py-7">
+          <div className="mx-auto mb-6 flex max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
             <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-300/20 bg-cyan-300/10 text-cyan-100"><BriefcaseBusiness className="h-5 w-5" /></span>
-            <h3 className="text-xl font-bold text-white">Experience</h3>
+            <div>
+              <p className="font-mono text-xs uppercase text-cyan-200">work.history()</p>
+              <h3 className="text-xl font-bold text-white">Experience</h3>
+            </div>
           </div>
-          <HorizontalAutoSlider ariaLabel="Experience carousel" itemClassName="w-[min(84vw,38rem)] lg:w-[min(40vw,38rem)]">
-          {experiences.map((item) => (
-              <div key={item.id} className="interactive-card glass h-full rounded-xl border-t-2 border-t-cyan-300/30 p-4 sm:p-5">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <HorizontalAutoSlider ariaLabel="Experience carousel" itemClassName="flex w-[min(84vw,23rem)]">
+              {experiences.map((item) => (
+              <div key={item.id} className="interactive-card glass flex h-[19rem] w-full flex-col rounded-xl border-t-2 border-t-cyan-300/30 p-4 sm:p-5">
                 <p className="font-mono text-xs text-cyan-200">{formatDate(item.start_date)} - {item.is_current ? "Present" : formatDate(item.end_date)}</p>
                 <h3 className="mt-2 text-xl font-bold text-white">{item.position}</h3>
                 <p className="text-sm text-purple-200">{item.company}</p>
-                <p className="mt-3 text-sm leading-7 text-slate-400">{item.description}</p>
+                <p className="mt-4 line-clamp-7 text-sm leading-7 text-slate-400">{item.description}</p>
               </div>
-          ))}
-          </HorizontalAutoSlider>
-        </div>
-        <div className="min-w-0">
-          <div className="mb-6 flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-purple-300/20 bg-purple-300/10 text-purple-100"><GraduationCap className="h-5 w-5" /></span>
-            <h3 className="text-xl font-bold text-white">Education</h3>
+              ))}
+            </HorizontalAutoSlider>
           </div>
-          <HorizontalAutoSlider ariaLabel="Education carousel" itemClassName="w-[min(84vw,38rem)] lg:w-[min(40vw,38rem)]">
-          {educations?.map((item) => (
-              <div key={item.id} className="interactive-card glass h-full rounded-xl border-t-2 border-t-purple-300/30 p-4 sm:p-5">
+        </div>
+        <div className="min-w-0 border-y border-white/[0.07] bg-white/[0.015] py-7">
+          <div className="mx-auto mb-6 flex max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-purple-300/20 bg-purple-300/10 text-purple-100"><GraduationCap className="h-5 w-5" /></span>
+            <div>
+              <p className="font-mono text-xs uppercase text-purple-200">study.path()</p>
+              <h3 className="text-xl font-bold text-white">Education</h3>
+            </div>
+          </div>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <HorizontalAutoSlider ariaLabel="Education carousel" itemClassName="flex w-[min(84vw,23rem)]">
+              {educations?.map((item) => (
+              <div key={item.id} className="interactive-card glass flex h-[19rem] w-full flex-col rounded-xl border-t-2 border-t-purple-300/30 p-4 sm:p-5">
                 <p className="font-mono text-xs text-cyan-200">{item.start_year} - {item.end_year || "Present"}</p>
                 <h3 className="mt-2 text-xl font-bold text-white">{item.institution}</h3>
                 <p className="text-sm text-purple-200">{item.major}</p>
-                <p className="mt-3 text-sm leading-7 text-slate-400">{item.description}</p>
+                <p className="mt-4 line-clamp-7 text-sm leading-7 text-slate-400">{item.description}</p>
               </div>
-          ))}
-          </HorizontalAutoSlider>
+              ))}
+            </HorizontalAutoSlider>
+          </div>
         </div>
       </div>
     </section>

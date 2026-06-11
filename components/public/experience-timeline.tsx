@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/animation/reveal";
-import { HorizontalAutoSlider } from "@/components/public/horizontal-auto-slider";
+import { ContinuousCardMarquee } from "@/components/public/continuous-card-marquee";
 import { formatDate } from "@/lib/utils";
 import type { Education, Experience } from "@/types/database";
 import { BriefcaseBusiness, GraduationCap } from "lucide-react";
@@ -22,17 +22,17 @@ export function ExperienceTimeline({ experiences, educations }: { experiences: E
               <h3 className="text-xl font-bold text-white">Experience</h3>
             </div>
           </div>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <HorizontalAutoSlider ariaLabel="Experience carousel" itemClassName="flex w-[min(84vw,23rem)]">
+          <div className="mx-auto max-w-[100rem]">
+            <ContinuousCardMarquee ariaLabel="Experience cards" speed={24} itemClassName="w-[min(84vw,23rem)]">
               {experiences.map((item) => (
-              <div key={item.id} className="interactive-card glass flex h-[19rem] w-full flex-col rounded-xl border-t-2 border-t-cyan-300/30 p-4 sm:p-5">
-                <p className="font-mono text-xs text-cyan-200">{formatDate(item.start_date)} - {item.is_current ? "Present" : formatDate(item.end_date)}</p>
-                <h3 className="mt-2 text-xl font-bold text-white">{item.position}</h3>
-                <p className="text-sm text-purple-200">{item.company}</p>
-                <p className="mt-4 line-clamp-7 text-sm leading-7 text-slate-400">{item.description}</p>
-              </div>
+                <article key={item.id} className="interactive-card glass flex h-[18rem] w-full flex-col rounded-xl border-t-2 border-t-cyan-300/30 p-5">
+                  <p className="font-mono text-xs text-cyan-200">{formatDate(item.start_date)} - {item.is_current ? "Present" : formatDate(item.end_date)}</p>
+                  <h3 className="mt-3 line-clamp-2 text-xl font-bold leading-tight text-white">{item.position}</h3>
+                  <p className="mt-1 line-clamp-1 text-sm text-purple-200">{item.company}</p>
+                  <p className="mt-4 line-clamp-6 text-sm leading-7 text-slate-400">{item.description}</p>
+                </article>
               ))}
-            </HorizontalAutoSlider>
+            </ContinuousCardMarquee>
           </div>
         </div>
         <div className="min-w-0 border-y border-white/[0.07] bg-white/[0.015] py-7">
@@ -43,17 +43,17 @@ export function ExperienceTimeline({ experiences, educations }: { experiences: E
               <h3 className="text-xl font-bold text-white">Education</h3>
             </div>
           </div>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <HorizontalAutoSlider ariaLabel="Education carousel" itemClassName="flex w-[min(84vw,23rem)]">
+          <div className="mx-auto max-w-[100rem]">
+            <ContinuousCardMarquee ariaLabel="Education cards" direction="right" speed={20} itemClassName="w-[min(84vw,23rem)]">
               {educations?.map((item) => (
-              <div key={item.id} className="interactive-card glass flex h-[19rem] w-full flex-col rounded-xl border-t-2 border-t-purple-300/30 p-4 sm:p-5">
-                <p className="font-mono text-xs text-cyan-200">{item.start_year} - {item.end_year || "Present"}</p>
-                <h3 className="mt-2 text-xl font-bold text-white">{item.institution}</h3>
-                <p className="text-sm text-purple-200">{item.major}</p>
-                <p className="mt-4 line-clamp-7 text-sm leading-7 text-slate-400">{item.description}</p>
-              </div>
+                <article key={item.id} className="interactive-card glass flex h-[18rem] w-full flex-col rounded-xl border-t-2 border-t-purple-300/30 p-5">
+                  <p className="font-mono text-xs text-cyan-200">{item.start_year} - {item.end_year || "Present"}</p>
+                  <h3 className="mt-3 line-clamp-2 text-xl font-bold leading-tight text-white">{item.institution}</h3>
+                  <p className="mt-1 line-clamp-1 text-sm text-purple-200">{item.major}</p>
+                  <p className="mt-4 line-clamp-6 text-sm leading-7 text-slate-400">{item.description}</p>
+                </article>
               ))}
-            </HorizontalAutoSlider>
+            </ContinuousCardMarquee>
           </div>
         </div>
       </div>

@@ -95,6 +95,14 @@ button {
   mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .custom-cursor-enabled,
   .custom-cursor-enabled * {

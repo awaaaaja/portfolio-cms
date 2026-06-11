@@ -1,5 +1,6 @@
 import { Award, BookOpenText, ExternalLink } from "lucide-react";
 import { Reveal } from "@/components/animation/reveal";
+import { HorizontalAutoSlider } from "@/components/public/horizontal-auto-slider";
 import { formatDate } from "@/lib/utils";
 import type { Certification, Publication } from "@/types/database";
 
@@ -28,12 +29,14 @@ export function CredentialsSection({ certifications, publications }: { certifica
 
 function CredentialGroup({ title, icon, children }: { title: string; icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <div>
+    <div className="min-w-0">
       <div className="mb-5 flex items-center gap-3 text-white">
         <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-300/10 text-cyan-100">{icon}</span>
         <h3 className="text-xl font-bold">{title}</h3>
       </div>
-      <div className="grid gap-4">{children}</div>
+      <HorizontalAutoSlider ariaLabel={`${title} carousel`} intervalMs={4000} itemClassName="w-[min(86vw,40rem)] lg:w-[min(40vw,40rem)]">
+        {children}
+      </HorizontalAutoSlider>
     </div>
   );
 }
@@ -54,11 +57,7 @@ function CredentialCard({ title, meta, description, href, image, label = "View c
     </article>
   );
 
-  return (
-    <Reveal>
-      {normalizedHref ? <a href={normalizedHref} target="_blank" rel="noreferrer" data-cursor="hover" aria-label={`${label}: ${title}`}>{content}</a> : content}
-    </Reveal>
-  );
+  return normalizedHref ? <a href={normalizedHref} target="_blank" rel="noreferrer" data-cursor="hover" aria-label={`${label}: ${title}`} className="block h-full">{content}</a> : content;
 }
 
 function normalizeHref(value?: string | null) {

@@ -12,7 +12,7 @@ export function AboutSection({ profile, marqueeSkills }: { profile: Profile; mar
     <section className="mx-auto max-w-7xl overflow-hidden px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
       <Reveal>
         <div className="grid min-w-0 gap-8 sm:gap-10 lg:grid-cols-[minmax(260px,0.8fr)_minmax(0,1.2fr)] lg:items-center">
-          <div className="glass mx-auto w-full max-w-[280px] overflow-hidden rounded-2xl p-3 sm:max-w-sm lg:max-w-none">
+          <div className="glass group mx-auto w-full max-w-[280px] overflow-hidden rounded-2xl p-3 sm:max-w-sm lg:max-w-none">
             {photos.length ? (
               <AboutPhotoSlider images={photos} name={profile.name} />
             ) : (

@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping health endpoint
-        run: curl -sf --max-time 30 "${{ vars.KEEPALIVE_URL }}" || curl -sf --max-time 30 "https://portfolio-cms.vercel.app/api/health"
+        run: curl -sf --max-time 30 "${{ vars.KEEPALIVE_URL }}" || curl -sf --max-time 30 "https://haikalfatwarachmansyah.vercel.app/api/health"

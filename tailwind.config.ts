@@ -40,8 +40,8 @@ const config: Config = {
         }
       },
       boxShadow: {
-        neon: "0 0 24px rgba(34, 211, 238, 0.24), 0 0 60px rgba(124, 58, 237, 0.18)",
-        glass: "0 16px 60px rgba(0, 0, 0, 0.35)"
+        neon: "0 0 0 1px rgba(103, 232, 249, 0.14), 0 10px 32px -8px rgba(34, 211, 238, 0.28)",
+        glass: "0 20px 60px -12px rgba(2, 10, 26, 0.65)"
       },
       fontFamily: {
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],

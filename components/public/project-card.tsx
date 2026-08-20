@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: ProjectWithRelations }) {
             {project.thumbnail_url ? (
               <img src={project.thumbnail_url} alt={project.title} className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.025]" />
             ) : (
-            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(135deg,rgba(34,211,238,0.16),rgba(124,58,237,0.22))] font-mono text-sm text-cyan-100 transition duration-700 ease-out group-hover:scale-[1.025]">
+            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(135deg,rgba(34,211,238,0.14),rgba(8,47,73,0.45))] font-mono text-sm text-cyan-100 transition duration-700 ease-out group-hover:scale-[1.025]">
                 /{project.slug}
               </div>
             )}
@@ -24,7 +24,7 @@ export function ProjectCard({ project }: { project: ProjectWithRelations }) {
         </Link>
         <div className="space-y-4 p-4 sm:p-5">
           <div className="flex items-center justify-between gap-3">
-            <Badge className={project.is_featured ? "border-purple-300/40 bg-purple-400/15 text-purple-100" : ""}>
+            <Badge className={project.is_featured ? "border-cyan-300/40 bg-cyan-400/15 text-cyan-100" : ""}>
               {project.is_featured ? "Featured" : project.category || "Project"}
             </Badge>
             <div className="flex gap-2 text-slate-400">

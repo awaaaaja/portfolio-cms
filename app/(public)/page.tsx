@@ -28,8 +28,8 @@ export default async function HomePage() {
         <Reveal>
           <div className="mb-8 flex flex-col items-start gap-5 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="mb-3 font-mono text-sm uppercase text-cyan-200">projects.featured()</p>
-              <h2 className="text-3xl font-black text-white sm:text-5xl">Featured projects</h2>
+              <p className="mb-3 font-mono text-sm text-cyan-200">projects.featured()</p>
+              <h2 className="text-3xl font-black tracking-tight text-white sm:text-5xl">Featured projects</h2>
             </div>
             <Button asChild variant="outline" className="w-full sm:w-auto">
               <Link href="/projects">All Projects <ArrowRight className="h-4 w-4" /></Link>
@@ -45,7 +45,7 @@ export default async function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <Reveal>
           <div className="glass rounded-2xl p-5 text-center sm:p-8 md:p-12">
-            <h2 className="text-balance text-3xl font-black leading-tight text-white sm:text-5xl">Have a system idea to ship?</h2>
+            <h2 className="text-balance text-3xl font-black leading-tight tracking-tight text-white sm:text-5xl">Have a system idea to ship?</h2>
             <p className="mx-auto mt-4 max-w-2xl text-slate-300">Let’s turn the interface, dashboard, or data workflow into something polished and production-ready.</p>
             <Button asChild className="mt-7 w-full sm:w-auto" size="lg">
               <Link href="/contact">Contact Me</Link>

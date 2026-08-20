@@ -9,7 +9,7 @@ export function AdminTopbar({ title }: { title?: string }) {
     <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 px-4 py-3 backdrop-blur lg:px-8">
       <div className="flex items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="font-mono text-xs uppercase text-cyan-200">admin.console</p>
+          <p className="font-mono text-xs text-cyan-200">admin.console</p>
           <h1 className="truncate text-lg font-bold text-white sm:text-xl">{title || "Dashboard"}</h1>
         </div>
         <div className="flex items-center gap-2">

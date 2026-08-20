@@ -22,8 +22,8 @@ export function AboutSection({ profile, marqueeSkills }: { profile: Profile; mar
             )}
           </div>
           <div className="min-w-0">
-            <p className="mb-3 font-mono text-sm uppercase text-cyan-200">about.me()</p>
-            <h2 className="text-balance text-3xl font-black leading-tight text-white sm:text-5xl">Developer for systems that feel sharp and usable.</h2>
+            <p className="mb-3 font-mono text-sm text-cyan-200">about.me()</p>
+            <h2 className="text-balance text-3xl font-black leading-tight tracking-tight text-white sm:text-5xl">Developer for systems that feel sharp and usable.</h2>
             <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:mt-6 sm:text-lg sm:leading-8">{profile.about_bio || profile.bio}</p>
             <div className="mt-5 min-w-0 sm:mt-7">
               <TechMarquee skills={marqueeSkills} />

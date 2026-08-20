@@ -9,8 +9,8 @@ export default async function BlogPage() {
   const blogs = await getBlogs();
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <p className="mb-3 font-mono text-sm uppercase text-cyan-200">blog.published()</p>
-      <h1 className="text-4xl font-black text-white sm:text-6xl">Blog</h1>
+      <p className="mb-3 font-mono text-sm text-cyan-200">blog.published()</p>
+      <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl">Blog</h1>
       <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {blogs.map((blog) => (
           <Link key={blog.id} href={`/blog/${blog.slug}`} className="glass overflow-hidden rounded-2xl transition hover:border-cyan-300/40 hover:shadow-neon" data-cursor="hover">

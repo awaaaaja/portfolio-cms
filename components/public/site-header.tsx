@@ -1,13 +1,6 @@
 import Link from "next/link";
-import { Code2, Menu } from "lucide-react";
-
-const links = [
-  ["About", "/about"],
-  ["Skills", "/skills"],
-  ["Projects", "/projects"],
-  ["Blog", "/blog"],
-  ["Contact", "/contact"]
-];
+import { Code2 } from "lucide-react";
+import { DesktopNav, MobileNav } from "@/components/public/nav-links";
 
 export function SiteHeader({ logo = "UJ" }: { logo?: string | null }) {
   return (
@@ -19,25 +12,8 @@ export function SiteHeader({ logo = "UJ" }: { logo?: string | null }) {
           </span>
           {logo || "PORTFOLIO"}
         </Link>
-        <nav className="hidden items-center gap-1 md:flex">
-          {links.map(([label, href]) => (
-            <Link key={href} href={href} className="relative rounded-lg px-3 py-2 text-sm text-slate-300 transition duration-300 after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-cyan-200 after:transition-transform after:duration-300 hover:bg-white/8 hover:text-white hover:after:scale-x-100" data-cursor="hover">
-              {label}
-            </Link>
-          ))}
-        </nav>
-        <details className="relative md:hidden">
-          <summary className="list-none rounded-lg border border-white/10 bg-white/[0.04] p-2 transition active:scale-95">
-            <Menu className="h-5 w-5" />
-          </summary>
-          <div className="absolute right-0 mt-3 w-[min(18rem,calc(100vw-2rem))] rounded-xl border border-white/10 bg-slate-950/95 p-2 shadow-glass backdrop-blur-xl">
-            {links.map(([label, href]) => (
-              <Link key={href} href={href} className="block rounded-lg px-3 py-3 text-sm text-slate-300 transition active:bg-white/10">
-                {label}
-              </Link>
-            ))}
-          </div>
-        </details>
+        <DesktopNav />
+        <MobileNav />
       </div>
     </header>
   );

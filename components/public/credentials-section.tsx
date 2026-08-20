@@ -9,8 +9,8 @@ export function CredentialsSection({ certifications, publications }: { certifica
     <section className="py-14 sm:py-20">
       <Reveal>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="mb-3 font-mono text-sm uppercase text-cyan-200">credentials.verify()</p>
-          <h2 className="text-balance text-3xl font-black leading-tight text-white sm:text-5xl">Certifications and publications</h2>
+          <p className="mb-3 font-mono text-sm text-cyan-200">credentials.verify()</p>
+          <h2 className="text-balance text-3xl font-black leading-tight tracking-tight text-white sm:text-5xl">Certifications and publications</h2>
         </div>
       </Reveal>
       <div className="mt-10 grid gap-14">
@@ -35,7 +35,7 @@ function CredentialGroup({ title, icon, children, direction = "left", speed }: {
       <div className="mx-auto mb-6 flex max-w-7xl items-center gap-3 px-4 text-white sm:px-6 lg:px-8">
         <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-cyan-300/20 bg-cyan-300/10 text-cyan-100">{icon}</span>
         <div>
-          <p className="font-mono text-xs uppercase text-cyan-200">{title.toLowerCase()}.list()</p>
+          <p className="font-mono text-xs text-cyan-200">{title.toLowerCase()}.list()</p>
           <h3 className="text-xl font-bold">{title}</h3>
         </div>
       </div>

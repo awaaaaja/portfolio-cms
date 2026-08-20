@@ -9,17 +9,15 @@
   --card-foreground: 210 40% 98%;
   --muted: 225 25% 16%;
   --muted-foreground: 215 16% 68%;
-  --primary: 187 94% 53%;
+  --primary: 187 78% 52%;
   --primary-foreground: 222 47% 6%;
-  --secondary: 258 75% 56%;
+  --secondary: 226 20% 22%;
   --secondary-foreground: 210 40% 98%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 210 40% 98%;
   --border: 218 22% 18%;
   --input: 218 22% 18%;
-  --ring: 187 94% 53%;
-  --font-sans: Inter;
-  --font-mono: "JetBrains Mono";
+  --ring: 187 78% 52%;
 }
 
 * {
@@ -85,7 +83,7 @@ button {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #ffffff 0%, #67e8f9 42%, #a78bfa 82%);
+  background: linear-gradient(92deg, #ffffff 0%, #a5f3fc 55%, #22d3ee 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

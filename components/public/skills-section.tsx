@@ -8,8 +8,8 @@ export function SkillsSection({ skills, title = "Skill matrix" }: { skills: Skil
       <Reveal>
         <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mb-3 font-mono text-sm uppercase text-cyan-200">skills.filter(category)</p>
-            <h2 className="text-3xl font-black text-white sm:text-5xl">{title}</h2>
+            <p className="mb-3 font-mono text-sm text-cyan-200">skills.filter(category)</p>
+            <h2 className="text-3xl font-black tracking-tight text-white sm:text-5xl">{title}</h2>
           </div>
         </div>
       </Reveal>
@@ -30,7 +30,7 @@ export function SkillsSection({ skills, title = "Skill matrix" }: { skills: Skil
                 <span className="font-mono text-sm text-cyan-200">{skill.level}%</span>
               </div>
               <div className="h-2 overflow-hidden rounded-full bg-white/10">
-                <div className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-purple-400 transition-all duration-700 group-hover:brightness-125" style={{ width: `${skill.level}%` }} />
+                <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-cyan-200 transition-all duration-700 group-hover:brightness-125" style={{ width: `${skill.level}%` }} />
               </div>
             </div>
           </Reveal>

@@ -16,8 +16,8 @@ export default async function ProjectsPage({ searchParams }: { searchParams: { c
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
       <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <p className="mb-3 font-mono text-sm uppercase text-cyan-200">projects.where(status=published)</p>
-          <h1 className="text-4xl font-black text-white sm:text-6xl">Projects</h1>
+          <p className="mb-3 font-mono text-sm text-cyan-200">projects.where(status=published)</p>
+          <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl">Projects</h1>
         </div>
         <form className="relative w-full lg:max-w-sm">
           <Search className="absolute left-3 top-3 h-4 w-4 text-slate-500" />

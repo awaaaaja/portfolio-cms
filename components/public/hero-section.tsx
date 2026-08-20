@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download, Mail, Rocket } from "lucide-react";
+import { Download, FolderGit2, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/animation/reveal";
 import { MagneticButton } from "@/components/animation/magnetic-button";
@@ -10,14 +10,14 @@ import type { Profile, SiteSettings } from "@/types/database";
 
 export function HeroSection({ profile, settings }: { profile: Profile; settings: SiteSettings }) {
   return (
-    <section className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-7xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12 lg:px-8">
+    <section className="relative mx-auto grid min-h-[calc(100dvh-4rem)] max-w-7xl items-center gap-10 px-4 py-10 sm:px-6 sm:py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12 lg:px-8">
       <Reveal>
         <div className="max-w-3xl">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100 sm:text-sm">
-            <Rocket className="h-4 w-4" />
-            Futuristic developer workspace
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 font-mono text-xs text-cyan-100 sm:text-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
+            open for work
           </div>
-          <h1 className="text-balance text-[2.45rem] font-black leading-[1.08] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="text-balance text-[2.45rem] font-black leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-7xl">
             <span className="text-gradient">{settings.hero_title || `Hi, I am ${profile.name}.`}</span>
             <br />
             {settings.hero_subtitle || profile.headline}
@@ -29,7 +29,7 @@ export function HeroSection({ profile, settings }: { profile: Profile; settings:
           <div className="mt-7 grid gap-3 sm:mt-8 sm:flex sm:flex-row">
             <MagneticButton>
               <Button asChild size="lg" className="w-full sm:w-auto">
-                <Link href="/projects"><Rocket className="h-4 w-4" /> View Projects</Link>
+                <Link href="/projects"><FolderGit2 className="h-4 w-4" /> View Projects</Link>
               </Button>
             </MagneticButton>
             <MagneticButton>

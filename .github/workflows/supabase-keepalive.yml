@@ -1,0 +1,13 @@
+name: supabase-keepalive
+
+on:
+  schedule:
+    - cron: "0 4 */2 * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping health endpoint
+        run: curl -sf --max-time 30 "${{ vars.KEEPALIVE_URL }}" || curl -sf --max-time 30 "https://portfolio-cms.vercel.app/api/health"

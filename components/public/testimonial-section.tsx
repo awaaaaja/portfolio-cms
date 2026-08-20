@@ -20,8 +20,8 @@ export function TestimonialSection({ testimonials }: { testimonials: Testimonial
     <section className="overflow-hidden border-t border-white/10 py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="mb-3 font-mono text-sm uppercase text-cyan-200">people.say()</p>
-          <h2 className="text-balance text-3xl font-black leading-tight text-white sm:text-5xl">What people say about me</h2>
+          <p className="mb-3 font-mono text-sm text-cyan-200">people.say()</p>
+          <h2 className="text-balance text-3xl font-black leading-tight tracking-tight text-white sm:text-5xl">What people say about me</h2>
         </Reveal>
       </div>
       <div className="mask-fade-x mt-10">

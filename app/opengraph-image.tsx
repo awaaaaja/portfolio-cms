@@ -21,12 +21,12 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "72px 80px",
-          background: "linear-gradient(135deg, #050816 0%, #0b1d2e 100%)",
+          background: "linear-gradient(135deg, #12021a 0%, #1a0533 100%)",
           fontFamily: "monospace"
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "16px", color: "#a5f3fc", fontSize: 24, marginBottom: 24 }}>
-          <div style={{ width: 14, height: 14, borderRadius: 99, background: "#22d3ee" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: "16px", color: "#ff8fd5", fontSize: 24, marginBottom: 24 }}>
+          <div style={{ width: 14, height: 14, borderRadius: 99, background: "#f50ea2" }} />
           open for work
         </div>
         <div style={{ display: "flex", fontSize: 72, fontWeight: 800, color: "#ffffff", lineHeight: 1.08, letterSpacing: -2 }}>

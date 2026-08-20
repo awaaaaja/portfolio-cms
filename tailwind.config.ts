@@ -37,10 +37,23 @@ const config: Config = {
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))"
+        },
+        cyan: {
+          50: "#ffe3f4",
+          100: "#ffc2e8",
+          200: "#ff8fd5",
+          300: "#ff47bd",
+          400: "#f50ea2",
+          500: "#db0689",
+          600: "#b30070",
+          700: "#8c0a5c",
+          800: "#660748",
+          900: "#440a31",
+          950: "#29021f"
         }
       },
       boxShadow: {
-        neon: "0 0 0 1px rgba(103, 232, 249, 0.14), 0 10px 32px -8px rgba(34, 211, 238, 0.28)",
+        neon: "0 0 0 1px rgba(245, 14, 162, 0.16), 0 10px 32px -8px rgba(245, 14, 162, 0.32)",
         glass: "0 20px 60px -12px rgba(2, 10, 26, 0.65)"
       },
       fontFamily: {

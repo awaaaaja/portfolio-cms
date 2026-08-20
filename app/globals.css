@@ -83,7 +83,7 @@ button {
 }
 
 .text-gradient {
-  background: linear-gradient(92deg, #ffffff 0%, #a5f3fc 55%, #22d3ee 100%);
+  background: linear-gradient(92deg, #ffffff 0%, #ff9de2 55%, #f50ea2 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

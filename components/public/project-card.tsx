@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: ProjectWithRelations }) {
             {project.thumbnail_url ? (
               <img src={project.thumbnail_url} alt={project.title} className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.025]" />
             ) : (
-            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(135deg,rgba(34,211,238,0.14),rgba(8,47,73,0.45))] font-mono text-sm text-cyan-100 transition duration-700 ease-out group-hover:scale-[1.025]">
+            <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(135deg,rgba(245,14,162,0.16),rgba(40,20,80,0.5))] font-mono text-sm text-cyan-100 transition duration-700 ease-out group-hover:scale-[1.025]">
                 /{project.slug}
               </div>
             )}

@@ -1,7 +1,4 @@
-"use client";
-
 import { Children } from "react";
-import Marquee from "react-fast-marquee";
 import { cn } from "@/lib/utils";
 
 export function ContinuousCardMarquee({
@@ -20,15 +17,21 @@ export function ContinuousCardMarquee({
   const items = Children.toArray(children);
   if (!items.length) return null;
 
+  // ponytail: fixed duration per speed, not measured width; tune if pacing feels off
+  const duration = Math.max(12, Math.round(900 / speed));
+
   return (
-    <div role="region" aria-label={ariaLabel} className="mask-fade-x w-full min-w-0 overflow-hidden py-2">
-      <Marquee autoFill pauseOnHover direction={direction} speed={speed} gradient={false}>
-        {items.map((item, index) => (
+    <div role="region" aria-label={ariaLabel} className="group mask-fade-x w-full min-w-0 overflow-hidden py-2">
+      <div
+        className="marquee-track flex w-max group-hover:[animation-play-state:paused]"
+        style={{ ["--marquee-duration" as string]: `${duration}s`, animationDirection: direction === "right" ? "reverse" : "normal" }}
+      >
+        {[...items, ...items].map((item, index) => (
           <div key={index} className={cn("mx-2 flex h-full shrink-0", itemClassName)}>
             {item}
           </div>
         ))}
-      </Marquee>
+      </div>
     </div>
   );
 }

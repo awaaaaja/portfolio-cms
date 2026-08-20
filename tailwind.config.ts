@@ -53,8 +53,8 @@ const config: Config = {
           "50%": { transform: "translateY(-14px)" }
         },
         "grid-pan": {
-          "0%": { backgroundPosition: "0 0" },
-          "100%": { backgroundPosition: "72px 72px" }
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(72px)" }
         },
         blink: {
           "0%, 45%": { opacity: "1" },

@@ -101,6 +101,15 @@ button {
   display: none;
 }
 
+.marquee-track {
+  animation: marquee-x var(--marquee-duration, 40s) linear infinite;
+}
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .custom-cursor-enabled,
   .custom-cursor-enabled * {
@@ -160,10 +169,5 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
-  }
-
-  .rfm-marquee {
-    animation-duration: var(--duration) !important;
-    animation-iteration-count: infinite !important;
   }
 }

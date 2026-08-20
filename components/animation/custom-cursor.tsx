@@ -51,7 +51,7 @@ export function CustomCursor() {
         style={{ x: mouseX, y: mouseY }}
       />
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[998] flex -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full border border-cyan-200/70 bg-cyan-200/[0.03] text-[10px] font-bold uppercase tracking-wider text-cyan-100 shadow-[0_0_36px_rgba(34,211,238,0.22)] backdrop-blur-sm"
+        className="pointer-events-none fixed left-0 top-0 z-[998] flex -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full border border-cyan-200/70 bg-cyan-200/[0.03] text-[10px] font-bold uppercase tracking-wider text-cyan-100 shadow-[0_0_36px_rgba(34,211,238,0.22)]"
         animate={{
           width: label ? 74 : active ? 54 : 36,
           height: label ? 74 : active ? 54 : 36,

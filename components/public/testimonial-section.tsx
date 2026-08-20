@@ -1,7 +1,7 @@
 "use client";
 
-import Marquee from "react-fast-marquee";
 import { useState, useTransition } from "react";
+import { ContinuousCardMarquee } from "@/components/public/continuous-card-marquee";
 import { MessageSquareQuote, Send, Upload } from "lucide-react";
 import { Reveal } from "@/components/animation/reveal";
 import { Button } from "@/components/ui/button";
@@ -24,11 +24,9 @@ export function TestimonialSection({ testimonials }: { testimonials: Testimonial
           <h2 className="text-balance text-3xl font-black leading-tight tracking-tight text-white sm:text-5xl">What people say about me</h2>
         </Reveal>
       </div>
-      <div className="mask-fade-x mt-10">
-        <Marquee autoFill pauseOnHover speed={22} gradient={false}>
-          {testimonials.map((item) => <TestimonialCard key={item.id} item={item} />)}
-        </Marquee>
-      </div>
+      <ContinuousCardMarquee ariaLabel="Testimonials" speed={22} itemClassName="sm:mx-3">
+        {testimonials.map((item) => <TestimonialCard key={item.id} item={item} />)}
+      </ContinuousCardMarquee>
       <div className="mx-auto mt-12 max-w-3xl px-4 sm:px-6">
         <TestimonialForm />
       </div>
@@ -38,7 +36,7 @@ export function TestimonialSection({ testimonials }: { testimonials: Testimonial
 
 function TestimonialCard({ item }: { item: Testimonial }) {
   return (
-    <article className="glass mx-2 w-[min(84vw,320px)] rounded-xl p-4 sm:mx-3 sm:w-[390px] sm:p-5">
+    <article className="glass w-[min(84vw,320px)] rounded-xl p-4 sm:w-[390px] sm:p-5">
       <MessageSquareQuote className="h-6 w-6 text-cyan-200" />
       <p className="mt-4 min-h-24 text-sm leading-7 text-slate-300">&ldquo;{item.quote}&rdquo;</p>
       <div className="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">

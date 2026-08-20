@@ -8,6 +8,18 @@ import { HeroSection } from "@/components/public/hero-section";
 import { ProjectCard } from "@/components/public/project-card";
 import { SkillsSection } from "@/components/public/skills-section";
 import { getEducations, getExperiences, getProfile, getProjects, getSettings, getSkills } from "@/lib/data/public";
+import { JsonLd } from "@/components/seo/json-ld";
+
+export async function generateMetadata() {
+  const profile = await getProfile();
+  const description = `Portfolio of ${profile.name}, ${profile.role}. Projects, skills, experience, and articles.`;
+  return {
+    title: "Home",
+    description,
+    alternates: { canonical: "/" },
+    openGraph: { title: `${profile.name} — ${profile.role}`, description, url: "/" }
+  };
+}
 
 export default async function HomePage() {
   const [profile, settings, featuredProjects, marqueeSkills, skills, experiences, educations] = await Promise.all([
@@ -22,6 +34,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <JsonLd profile={profile} />
       <HeroSection profile={profile} settings={settings} />
       <AboutSection profile={profile} marqueeSkills={marqueeSkills} />
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">

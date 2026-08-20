@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { getBlogs } from "@/lib/data/public";
 import { formatDate } from "@/lib/utils";
 
-export const metadata = { title: "Blog" };
+export const metadata = { title: "Blog", description: "Articles on web development, dashboards, and building software.", alternates: { canonical: "/blog" } };
 
 export default async function BlogPage() {
   const blogs = await getBlogs();

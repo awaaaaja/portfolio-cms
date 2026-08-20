@@ -3,7 +3,7 @@ import { Github, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { ContactForm } from "@/components/public/contact-form";
 import { getProfile } from "@/lib/data/public";
 
-export const metadata = { title: "Contact" };
+export const metadata = { title: "Contact", description: "Get in touch about projects, collaborations, or opportunities.", alternates: { canonical: "/contact" } };
 
 export default async function ContactPage() {
   const profile = await getProfile();

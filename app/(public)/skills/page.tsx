@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { SkillsSection } from "@/components/public/skills-section";
 import { getSkills } from "@/lib/data/public";
 
-export const metadata = { title: "Skills" };
+export const metadata = { title: "Skills", description: "Technical skills, tools, and technologies.", alternates: { canonical: "/skills" } };
 
 export default async function SkillsPage({ searchParams }: { searchParams: { category?: string } }) {
   const skills = await getSkills();

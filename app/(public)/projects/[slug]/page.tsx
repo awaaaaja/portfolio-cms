@@ -9,7 +9,19 @@ import { getProjectBySlug, getProjects } from "@/lib/data/public";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const project = await getProjectBySlug(params.slug);
-  return { title: project?.title || "Project" };
+  if (!project) return {};
+  return {
+    title: project.title,
+    description: project.short_description,
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      type: "website",
+      title: project.title,
+      description: project.short_description,
+      url: `/projects/${project.slug}`,
+      images: project.thumbnail_url ? [{ url: project.thumbnail_url }] : undefined
+    }
+  };
 }
 
 export default async function ProjectDetailPage({ params }: { params: { slug: string } }) {

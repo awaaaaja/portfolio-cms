@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { ProjectCard } from "@/components/public/project-card";
 import { getProjects } from "@/lib/data/public";
 
-export const metadata = { title: "Projects" };
+export const metadata = { title: "Projects", description: "Selected web apps, dashboards, and data products.", alternates: { canonical: "/projects" } };
 
 export default async function ProjectsPage({ searchParams }: { searchParams: { category?: string; q?: string } }) {
   const allProjects = await getProjects();

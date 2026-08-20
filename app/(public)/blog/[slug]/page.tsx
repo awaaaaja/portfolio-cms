@@ -4,18 +4,46 @@ import remarkGfm from "remark-gfm";
 import { Badge } from "@/components/ui/badge";
 import { getBlogBySlug } from "@/lib/data/public";
 import { formatDate } from "@/lib/utils";
+import { env } from "@/lib/env";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const blog = await getBlogBySlug(params.slug);
-  return { title: blog?.seo_title || blog?.title || "Blog", description: blog?.seo_description || blog?.excerpt || undefined };
+  if (!blog) return {};
+  return {
+    title: blog.seo_title || blog.title,
+    description: blog.seo_description || blog.excerpt,
+    alternates: { canonical: `/blog/${blog.slug}` },
+    openGraph: {
+      type: "article",
+      title: blog.title,
+      description: blog.seo_description || blog.excerpt || undefined,
+      url: `/blog/${blog.slug}`,
+      images: blog.cover_url ? [{ url: blog.cover_url }] : undefined,
+      publishedTime: blog.created_at,
+      modifiedTime: blog.updated_at || undefined
+    }
+  };
 }
 
 export default async function BlogDetailPage({ params }: { params: { slug: string } }) {
   const blog = await getBlogBySlug(params.slug);
   if (!blog) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: blog.title,
+    description: blog.excerpt,
+    datePublished: blog.created_at,
+    dateModified: blog.updated_at || blog.created_at,
+    image: blog.cover_url || undefined,
+    url: `${env.siteUrl}/blog/${blog.slug}`,
+    mainEntityOfPage: `${env.siteUrl}/blog/${blog.slug}`
+  };
+
   return (
     <article className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <Badge>{blog.category || "Notes"}</Badge>
       <h1 className="mt-5 text-4xl font-black text-white sm:text-6xl">{blog.title}</h1>
       <p className="mt-4 font-mono text-sm text-slate-500">{formatDate(blog.created_at)}</p>
